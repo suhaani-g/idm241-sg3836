@@ -8,7 +8,7 @@ body {
     color: #000;
     margin: 0;
     text-align: center;
-    line-height: 1.7;
+    line-height: 1.6;
     font-size: 14px;
     font-weight: 300;
   }
@@ -58,12 +58,15 @@ header a {
 
 .info-grid h2 {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: #333;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
 }
 
 .info-grid ul {
   padding-left: 20px;
+  color: #808080;
 }
 
 footer {
@@ -71,6 +74,24 @@ footer {
   padding: 20px;
   color: #666;
   font-size: 0.9rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  margin: 40px 0; 
+}
+
+.logo img {
+  width: 120px;       
+  max-width: 30%;     
+  height: auto;       
+}
+
+.logo h1, .logo p {
+  text-align: center;
 }
 
 /* Make responsive */

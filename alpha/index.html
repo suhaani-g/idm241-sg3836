@@ -6,8 +6,14 @@
   <title>IDM241 Alpha – Glossier Product Hover</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <section class="logo">
+    <img src="images/glossierlogo.png" alt="Glossier Logo" />
+  </section>
+
   <header>
     <h1>IDM241 Alpha – Product Card Hover</h1>
     <p><a href="https://www.glossier.com/collections/fragrance" target="_blank">glossier.com/collections/fragrance</a></p>
@@ -47,18 +53,27 @@
 
       <div>
         <h2>Feedback</h2>
+        <h3>Product Card:</h3>
+        <h4>Hover On</h4>
         <ul>
-          <li>The image grows slightly, brightens, and gains subtle depth</li>
-          <li>The image transition to a different image</li>
-          <li> The cursor changes to a pointer (hand) to signal clickability</li>
-          <li>Subtext changes from "Eau de parfum" to "50 ml"</li>
+          <li>The image slightly scales up</li>
+          <li>The image brightness increases</li>
+          <li>The Image fades from bottle to face over .5 seconds</li>
+          <li>Cursor changes to finger</li>
+        </ul>
+
+        <h4>Hover Off</h4>
+        <ul>
+          <li>The image slightly scales down</li>
+          <li>The image brightness deceases</li>
+          <li>The image fades from face to bottle over .5 seconds</li>
         </ul>
       </div>
 
       <div>
         <h2>Loops & Modes</h2>
         <ul>
-          <li>The animation repeats every time you hover on and off a card.</li>
+          <li>None</li>
         </ul>
       </div>
     </div>
