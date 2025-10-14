@@ -93,3 +93,21 @@ transition:background .3s ease;
 }
 .cta span{ font-size:17px; letter-spacing:.02em; }
 .product-card:hover .cta{ background:#fafafa; }
+
+/* media position */
+.media { position: relative; }
+
+/* images below */
+.media .img {
+position: absolute;
+inset: 0;
+z-index: 1;           
+}
+
+/* label above */
+.engrave {
+position: absolute;
+z-index: 3;           
+left: 16px;
+top: 16px;
+}
