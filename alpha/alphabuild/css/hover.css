@@ -1,150 +1,95 @@
-/* Product demo section */
-.product-demo {
-    display: flex;
-    justify-content: center;
-    margin: 40px auto 20px;
+/* Product demo wrapper */
+.product-demo{
+    display:flex;
+    justify-content:center;
+    margin:40px auto 20px;
 }
 
 /* Card */
-.product-card {
-width: 380px;
-background: #fff;
-border: 1px solid #d9d9d9;
-border-radius: 2px;
-overflow: hidden;
-transition: box-shadow .35s ease, transform .35s ease;
+.product-card{
+width:380px;
+background:#fff;
+border:1px solid #d9d9d9;
+border-radius:2px;
+overflow:hidden;
+transition:box-shadow .35s ease, transform .35s ease;
+}
+.product-card:hover{
+transform:translateY(-2px);
+box-shadow:0 12px 28px rgba(0,0,0,.07);
+cursor:pointer;
 }
 
-.product-card:hover {
-transform: translateY(-2px);
-box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
-cursor: pointer;
-}
-
-/* Media / image area */
-.media {
-position: relative;
-background: #f1f1f1;
-height: 480px;
-overflow: hidden;
-border-bottom: 1px solid #e0e0e0;
+/* MEDIA*/
+.media{
+position:relative;
+display:block;            
+padding:0;                
+background:#f1f1f1;
+height:480px;
+border-bottom:1px solid #e0e0e0;
+overflow:hidden;
 }
 
 /* Engrave tag */
-.engrave {
-position: absolute;
-left: 16px;
-top: 16px;
-padding: 6px 12px;
-font-family: "IBM Plex Mono", monospace;
-font-size: 14px;
-border: 1px solid #000;
-background: #fafafa;
-letter-spacing: 0.02em;
-transition: transform 0.3s ease, opacity 0.3s ease;
-transform: translateX(-6px);
-opacity: 0.9;
+.engrave{
+position:absolute;
+left:16px; top:16px;
+padding:6px 12px;
+font-family:"IBM Plex Mono", monospace;
+font-size:14px;
+border:1px solid #000;
+background:#fafafa;
+letter-spacing:.02em;
+transition:transform .3s ease, opacity .3s ease;
+transform:translateX(-6px);
+opacity:.9;
 }
+.product-card:hover .engrave{ transform:translateX(0); opacity:1; }
 
-.product-card:hover .engrave {
-transform: translateX(0);
-opacity: 1;
-}
-
-/* Two images stacked on top of each other for the fade */
-.media .img {
-position: absolute;
-width: 100%;
-height: 100%;
-object-fit: cover; /* fills entire area */
+/* IMAGE LAYERS: pin to all edges so they fill the entire box */
+.media .img{
+position:absolute;
+inset:0;                  
+width:100%;
+height:100%;
+object-fit:cover;         
 transition:
-    transform 0.4s ease,
-    filter 0.4s ease,
-    opacity 0.5s ease;
+    transform .4s ease,
+    filter .4s ease,
+    opacity .5s ease;
 }
+.media .img.base{ opacity:1;  filter:brightness(1); }
+.media .img.alt { opacity:0;  filter:brightness(1); }
 
-.media .img.base {
-opacity: 1;
-filter: brightness(1);
+.product-card:hover .media .img{
+transform:scale(1.03);
+filter:brightness(1.05);
 }
+.product-card:hover .media .img.base{ opacity:0; }
+.product-card:hover .media .img.alt { opacity:1; }
 
-.media .img.alt {
-opacity: 0;
-filter: brightness(1);
-}
-
-/* Hover effects */
-.product-card:hover .media .img {
-transform: scale(1.03);
-filter: brightness(1.05);
-}
-
-.product-card:hover .media .img.base {
-opacity: 0;
-}
-
-.product-card:hover .media .img.alt {
-opacity: 1;
-}
-
-/* Card body */
-.card-body {
-padding: 24px;
-font-family: "Karla", sans-serif;
-text-align: left;
-}
-
-.title {
-font-weight: 500;
-font-size: 20px;
-margin: 0 0 4px;
-}
-
-.subtitle {
-color: #7a7a7a;
-font-size: 17px;
-margin: 0 0 12px;
-}
-
-.price {
-font-size: 19px;
-margin: 4px 0 18px;
-}
+/* Body */
+.card-body{ padding:24px; font-family:"Karla", sans-serif; text-align:left; }
+.title{ font-weight:500; font-size:20px; margin:0 0 4px; }
+.subtitle{ color:#7a7a7a; font-size:17px; margin:0 0 12px; }
+.price{ font-size:19px; margin:4px 0 18px; }
 
 /* Size button */
-.size {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-width: 140px;
-height: 48px;
-border: 1px solid #000;
-background: #eaeaea;
-font-style: italic;
-font-size: 18px;
-transition: transform 0.2s ease;
+.size{
+display:inline-flex; align-items:center; justify-content:center;
+width:140px; height:48px;
+border:1px solid #000; background:#eaeaea;
+font-style:italic; font-size:18px;
+transition:transform .2s ease;
 }
+.product-card:hover .size{ transform:translateY(-1px); }
 
-.product-card:hover .size {
-transform: translateY(-1px);
+/* Add to bag */
+.cta{
+margin-top:20px; border:1px solid #000; height:60px;
+display:flex; align-items:center; justify-content:center;
+transition:background .3s ease;
 }
-
-/* Add to bag section */
-.cta {
-margin-top: 20px;
-border: 1px solid #000;
-height: 60px;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: background 0.3s ease;
-}
-
-.cta span {
-font-size: 17px;
-letter-spacing: 0.02em;
-}
-
-.product-card:hover .cta {
-background: #fafafa;
-}
+.cta span{ font-size:17px; letter-spacing:.02em; }
+.product-card:hover .cta{ background:#fafafa; }
