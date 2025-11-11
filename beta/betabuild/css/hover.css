@@ -94,7 +94,7 @@
 }
 .cta span{ font-size:17px; letter-spacing:.02em; }
 .cta:hover{
-    transform:translateY(-1px);
+    transform:translateY(-4px);
     background-color:#fde7ef;
     border:1.5px dashed #000;
 }
