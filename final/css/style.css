@@ -29,14 +29,18 @@ header a {
 }
 
 .gif-section {
-  max-width: 40px;
-  margin: 20px auto;
+  max-width: 400px;
+  margin: 0 auto 20px;
 }
 
 .gif-section img {
-  width: 30px;
+  width: 100%;
+  max-width: 400px;   
   height: auto;
   display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .info-grid {
