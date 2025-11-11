@@ -34,7 +34,7 @@ header a {
 }
 
 .gif-section img {
-  max-width: 30%;
+  width: 30px;
   height: auto;
   display: block;
 }
