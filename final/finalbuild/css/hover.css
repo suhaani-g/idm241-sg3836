@@ -226,19 +226,13 @@
 
 
 /* Animation when ml selection changes */
+/* Gentle color-flash when a size is selected */
 .size.primary.select-animate {
-    animation: popSelect 0.28s ease, flashSelect 0.7s ease;
+    animation: flashSoft 1s ease;
 }
 
-/* scale pop */
-@keyframes popSelect {
-    0%   { transform: scale(1); }
-    40%  { transform: scale(1.07); }
-    100% { transform: scale(1); }
-}
-
-/* flash to Glossier pink and fade back */
-@keyframes flashSelect {
-    0%   { background-color: #fde7ef; }   /* soft pink */
-    100% { background-color: #eaeaea; }   /* your normal size btn bg */
+@keyframes flashSoft {
+    0%   { background-color: rgba(253, 231, 239, 0.7); }
+    40%  { background-color: rgba(253, 231, 239, 0.4); }
+    100% { background-color: #eaeaea; }
 }
