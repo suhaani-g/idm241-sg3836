@@ -156,11 +156,12 @@
     align-items: center;
     gap: 8px;
     margin-top: 4px;
-    width: 100%;                 /* take full width of card body */
+    width: 100%;
+    position: relative;
 }
 
 .size-group .size {
-    flex: 1;                     /* all three share space evenly */
+    flex: 1;
     min-width: 0;
     height: 44px;
     border: 1px solid #000;
@@ -169,14 +170,15 @@
     font-size: 16px;
     transition:
         transform 0.2s ease,
-        opacity 0.25s ease;
+        opacity 0.25s ease,
+        background-color 0.2s ease;
 }
 
 .size-group .size.primary:hover {
     transform: translateY(-1px);
 }
 
-/* Hidden options by default */
+/* Options (30 ml / 100 ml) hidden by default */
 .size-group .size.option {
     opacity: 0;
     transform: translateY(2px);
@@ -184,12 +186,26 @@
     background: #f4f4f4;
 }
 
-/* Show options + pulse on hover */
+/* HOVER STATE for options – darken to match main box color */
+.size-group .size.option:hover {
+    background-color: #e0e0e0;  /* slightly darker / closer to primary */
+}
+
+/* When hovering, show the extra options */
 .size-group:hover .size.option {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
     animation: sizePulse 1.3s ease-in-out infinite;
+}
+
+/* If JS "locks" the group (after click), hide options again even on hover */
+.size-group.locked .size.option,
+.size-group.locked:hover .size.option {
+    opacity: 0;
+    transform: translateY(2px);
+    pointer-events: none;
+    animation: none;
 }
 
 @keyframes sizePulse {

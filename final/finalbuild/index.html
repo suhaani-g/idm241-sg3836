@@ -12,14 +12,45 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    /* ---------- FAVORITE HEART TOGGLE ---------- */
     const favBtn = document.querySelector('.favorite-btn');
 
     if (favBtn) {
       favBtn.addEventListener('click', function (e) {
-        e.stopPropagation(); // so clicking heart doesn't trigger card click
+        e.stopPropagation(); // prevent triggering card click
         this.classList.toggle('is-favorited');
         const pressed = this.classList.contains('is-favorited');
         this.setAttribute('aria-pressed', pressed);
+      });
+    }
+
+    /* ---------- SIZE SELECT BEHAVIOR ---------- */
+    const sizeGroup = document.querySelector('.size-group');
+
+    if (sizeGroup) {
+      const primaryBtn = sizeGroup.querySelector('.size.primary span');
+      const optionButtons = sizeGroup.querySelectorAll('.size.option');
+
+      optionButtons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+
+          // Get text of clicked button (e.g., "30 ml")
+          const newLabel = this.textContent.trim();
+
+          // Update main button label
+          if (primaryBtn) {
+            primaryBtn.textContent = newLabel;
+          }
+
+          // Lock / collapse the group (CSS will hide extra options)
+          sizeGroup.classList.add('locked');
+        });
+      });
+
+      // When mouse leaves the size area, unlock so user can re-open later
+      sizeGroup.addEventListener('mouseleave', function () {
+        sizeGroup.classList.remove('locked');
       });
     }
   });
