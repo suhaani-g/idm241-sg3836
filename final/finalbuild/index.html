@@ -58,21 +58,25 @@
 
       // CLICK OPTION: set as main size + collapse
       optionButtons.forEach(btn => {
-        btn.addEventListener('click', function (e) {
-          e.stopPropagation();
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
 
-          const newLabel = this.textContent.trim();
+    const newLabel = this.textContent.trim();
+    currentSize = newLabel;
+    primarySpan.textContent = currentSize;
 
-          currentSize = newLabel;
-          primarySpan.textContent = currentSize;
+    updateOptions();
 
-          updateOptions();
+    // ----- selection animation -----
+    primaryBtn.classList.remove('select-animate'); 
+    void primaryBtn.offsetWidth;         // forces the animation to restart
+    primaryBtn.classList.add('select-animate');
 
-          // Lock + close
-          sizeGroup.classList.add('locked');
-          sizeGroup.classList.remove('open');
-        });
-      });
+    // collapse the options
+    sizeGroup.classList.add('locked');
+    sizeGroup.classList.remove('open');
+  });
+});
 
       // When mouse leaves the whole group, reset open/locked
       sizeGroup.addEventListener('mouseleave', function () {
