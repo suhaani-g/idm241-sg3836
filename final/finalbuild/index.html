@@ -17,7 +17,7 @@
 
     if (favBtn) {
       favBtn.addEventListener('click', function (e) {
-        e.stopPropagation(); // prevent triggering card click
+        e.stopPropagation();
         this.classList.toggle('is-favorited');
         const pressed = this.classList.contains('is-favorited');
         this.setAttribute('aria-pressed', pressed);
@@ -28,27 +28,45 @@
     const sizeGroup = document.querySelector('.size-group');
 
     if (sizeGroup) {
-      const primaryBtn = sizeGroup.querySelector('.size.primary span');
-      const optionButtons = sizeGroup.querySelectorAll('.size.option');
+      const primarySpan = sizeGroup.querySelector('.size.primary span');
+      const optionButtons = Array.from(sizeGroup.querySelectorAll('.size.option'));
+      const optionSpans = optionButtons.map(btn => btn.querySelector('span'));
+
+      // All available sizes (from initial HTML)
+      const allSizes = Array.from(sizeGroup.querySelectorAll('.size'))
+        .map(btn => btn.textContent.trim());
+
+      let currentSize = primarySpan.textContent.trim();
+
+      function updateOptions() {
+        const otherSizes = allSizes.filter(size => size !== currentSize);
+        optionSpans.forEach((span, index) => {
+          span.textContent = otherSizes[index] || '';
+        });
+      }
+
+      // Initial setup so options always reflect "other" sizes
+      updateOptions();
 
       optionButtons.forEach(btn => {
         btn.addEventListener('click', function (e) {
           e.stopPropagation();
 
-          // Get text of clicked button (e.g., "30 ml")
           const newLabel = this.textContent.trim();
 
-          // Update main button label
-          if (primaryBtn) {
-            primaryBtn.textContent = newLabel;
-          }
+          // Update current size + main button label
+          currentSize = newLabel;
+          primarySpan.textContent = currentSize;
 
-          // Lock / collapse the group (CSS will hide extra options)
+          // Recalculate which two sizes go into the options
+          updateOptions();
+
+          // Collapse the options (CSS handles hiding when locked)
           sizeGroup.classList.add('locked');
         });
       });
 
-      // When mouse leaves the size area, unlock so user can re-open later
+      // When mouse leaves the area, unlock so hover works again
       sizeGroup.addEventListener('mouseleave', function () {
         sizeGroup.classList.remove('locked');
       });
