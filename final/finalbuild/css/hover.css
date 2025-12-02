@@ -174,12 +174,12 @@
         background-color 0.2s ease;
 }
 
-/* Only trigger lift on primary */
+/* Lift only on main button */
 .size-group .size.primary:hover {
     transform: translateY(-1px);
 }
 
-/* OPTIONS START HIDDEN */
+/* Options hidden by default */
 .size-group .size.option {
     opacity: 0;
     transform: translateY(2px);
@@ -187,27 +187,26 @@
     background: #f4f4f4;
 }
 
-/* HOVER DARKEN FOR OPTIONS */
+/* Darken on hover for options */
 .size-group .size.option:hover {
     background-color: #e0e0e0;
 }
 
-/* -----------------------------------------------
-SHOW OPTIONS ONLY WHEN PRIMARY BUTTON IS HOVERED
-------------------------------------------------*/
-.size-group .size.primary:hover ~ .size.option {
+/* Show options ONLY when group has .open (set by JS)
+   and NOT when locked after a click */
+.size-group.open:not(.locked) .size.option {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
     animation: sizePulse 1.3s ease-in-out infinite;
 }
 
-/* If locked, hide even if primary is hovered */
+/* If locked, hide options regardless */
 .size-group.locked .size.option {
-    opacity: 0 !important;
-    transform: translateY(2px) !important;
-    pointer-events: none !important;
-    animation: none !important;
+    opacity: 0;
+    transform: translateY(2px);
+    pointer-events: none;
+    animation: none;
 }
 
 @keyframes sizePulse {

@@ -28,11 +28,12 @@
     const sizeGroup = document.querySelector('.size-group');
 
     if (sizeGroup) {
-      const primarySpan = sizeGroup.querySelector('.size.primary span');
+      const primaryBtn   = sizeGroup.querySelector('.size.primary');
+      const primarySpan  = primaryBtn.querySelector('span');
       const optionButtons = Array.from(sizeGroup.querySelectorAll('.size.option'));
-      const optionSpans = optionButtons.map(btn => btn.querySelector('span'));
+      const optionSpans   = optionButtons.map(btn => btn.querySelector('span'));
 
-      // All available sizes (from initial HTML)
+      // All possible sizes pulled from initial HTML
       const allSizes = Array.from(sizeGroup.querySelectorAll('.size'))
         .map(btn => btn.textContent.trim());
 
@@ -45,34 +46,43 @@
         });
       }
 
-      // Initial setup so options always reflect "other" sizes
+      // Initial setup
       updateOptions();
 
+      // OPEN: when hovering the main size button, show options
+      primaryBtn.addEventListener('mouseenter', function () {
+        if (!sizeGroup.classList.contains('locked')) {
+          sizeGroup.classList.add('open');
+        }
+      });
+
+      // CLICK OPTION: set as main size + collapse
       optionButtons.forEach(btn => {
         btn.addEventListener('click', function (e) {
           e.stopPropagation();
 
           const newLabel = this.textContent.trim();
 
-          // Update current size + main button label
           currentSize = newLabel;
           primarySpan.textContent = currentSize;
 
-          // Recalculate which two sizes go into the options
           updateOptions();
 
-          // Collapse the options (CSS handles hiding when locked)
+          // Lock + close
           sizeGroup.classList.add('locked');
+          sizeGroup.classList.remove('open');
         });
       });
 
-      // When mouse leaves the area, unlock so hover works again
+      // When mouse leaves the whole group, reset open/locked
       sizeGroup.addEventListener('mouseleave', function () {
+        sizeGroup.classList.remove('open');
         sizeGroup.classList.remove('locked');
       });
     }
   });
 </script>
+
 </body>
 </html>
 
