@@ -51,10 +51,10 @@
 
       // OPEN: when hovering the main size button, show options
       primaryBtn.addEventListener('mouseenter', function () {
-        if (!sizeGroup.classList.contains('locked')) {
-          sizeGroup.classList.add('open');
-        }
-      });
+    // As soon as the user re-hovers the main button, unlock and open again
+    sizeGroup.classList.remove('locked');
+    sizeGroup.classList.add('open');
+});
 
       // CLICK OPTION: set as main size + collapse
       optionButtons.forEach(btn => {
