@@ -75,3 +75,48 @@ body {
     color: #666;
     font-size: 0.9rem;
   }
+
+  /* HERO SECTION */
+.hero {
+    max-width: 1100px;
+    margin: 20px auto 50px;
+    padding: 0 20px;
+  }
+  
+  .hero-media {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  }
+  
+  .hero-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Caption */
+  .hero-caption {
+    text-align: center;
+    margin-top: 14px;
+  }
+  
+  .hero-caption p {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: #555;
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 700px) {
+    .hero {
+      margin-bottom: 36px;
+    }
+  
+    .hero-media {
+      border-radius: 14px;
+    }
+  }
