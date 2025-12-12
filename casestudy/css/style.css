@@ -168,3 +168,48 @@ body {
       max-width: 90%;
     }
   }
+
+  /* SOLUTION VIDEO SECTION */
+.solution-demo {
+    margin: 30px 0 10px;
+    text-align: center;
+  }
+  
+  .demo-media {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  }
+  
+  .demo-media video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Link under video */
+  .demo-link {
+    margin-top: 16px;
+  }
+  
+  .demo-link a {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: #555;
+    text-decoration: underline;
+  }
+  
+  .demo-link a:hover {
+    opacity: 0.85;
+  }
+  
+  /* Responsive */
+  @media (max-width: 700px) {
+    .demo-media {
+      border-radius: 14px;
+    }
+  }
