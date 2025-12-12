@@ -3,251 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IDM241 Final</title>
+  <title>IDM 241 Case Study – Glossier Product Card</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/hover.css">
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <section class="logo">
-    <img src="images/glossierlogo.png" alt="Glossier Logo" />
-  </section>
-
-  <header>
-    <h1>IDM241 Final</h1>
-    <p><a href="https://www.glossier.com/collections/fragrance" target="_blank" rel="noopener">glossier.com/collections/fragrance</a></p>
+  <header class="page-header">
+    <h1>Case Study</h1>
+    <p>IDM 241 · Microinteractions</p>
   </header>
 
-  <main>
-    <div class="info-grid">
-      <!-- ========== COLUMN 1 ========== -->
-      <div>
-        <h2>Triggers</h2>
+  <main class="container">
 
-        <h3>Product Card Block:</h3>
-        <ul>
-          <li>Hover On</li>
-          <li>Hover Off</li>
-        </ul>
-        
-        <h3>Product Card Image:</h3>
-        <ul>
-          <li>Hover On</li>
-          <li>Hover Off</li>
-        </ul>
+    <!-- OVERVIEW -->
+    <section class="section">
+      <h2>The Overview</h2>
+      <p>
+        On Glossier’s fragrance collection page, customers should be able to scan quickly,
+        explore variants, and feel confident about actions like saving or adding a product.
+        The challenge is doing this while keeping the interface minimal and consistent with
+        Glossier’s soft aesthetic.
+      </p>
+      <p>
+        This microinteraction concept enhances one product card with hover and click feedback:
+        a raised card state for discoverability, an image swap to provide additional context,
+        a size selector that reveals options and confirms a chosen size, and a favorites toggle
+        that communicates saved state through both visuals and accessibility attributes.
+      </p>
+    </section>
 
-        <h3>Add to Bag Button:</h3>
-        <ul>
-          <li>Hover On</li>
-          <li>Hover Off</li>
-        </ul>
-        
-        <h3>Product Size Button:</h3>
-        <ul>
-          <li>Hover On</li>
-          <li>Hover Off</li>
-        </ul>
-        
-        <h3>Favorites Button:</h3>
-        <ul>
-          <li>Hover On</li>
-          <li>Hover Off</li>
-          <li>Click On
-            <ul>
-              <li>First to favorite</li>
-              <li>Second to unfavorite</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+    <!-- CONTEXT -->
+    <section class="section">
+      <h2>Context and Challenge</h2>
 
-      <!-- ========== COLUMN 2 ========== -->
-      <div>
-        <h2>Rules</h2>
+      <h3>Background</h3>
+      <p>
+        Glossier’s fragrance collection is designed to feel clean, modern, and easy to browse.
+        Product cards are one of the first things users interact with when scrolling through a
+        product website, so they need to clearly convey what is clickable and what actions are available.
+      </p>
 
-        <h3>Product Card Block:</h3>
-        <h4>Hover On</h4>
-        <ul>
-          <li>The box slightly scales up</li>
-          <li>Buttons and text inside box scale up</li>
-          <li>Shadow behind box appears</li>
-        </ul>
+      <p>
+        This project was completed as part of IDM 241, a 10-week interaction design course focused
+        on microinteractions and class feedback. The goal of the assignment was to design and build
+        components that use motion and state changes to improve usability. The project focused on one
+        product card rather than a full website and was completed individually within the course timeline.
+        The final iteration was completed in parts starting with Alpha, Beta, then Final. Each iteration
+        included further building of the product card and improvements to the microinteractions and UI design.
+      </p>
 
-        <h4>Hover Off</h4>
-        <ul>
-          <li>The box slightly scales down</li>
-          <li>Buttons and text inside box scale down</li>
-          <li>Shadow behind box dissapears</li>
-        </ul>
+      <h3>The Problem</h3>
+      <p>
+        Many product cards feel static and do not clearly show how users can interact with them.
+        Actions like hovering for more information, selecting a size, or favoriting an item can be
+        easy to miss or feel unclear if there is no feedback.
+      </p>
+      <p>
+        The challenge was to improve clarity and usability using only subtle interactions, without
+        adding extra UI elements or overwhelming the design. Any interaction added, needed to feel
+        intentional and fit naturally within Glossier’s minimal style.
+      </p>
 
-        <h3>Product Card Image:</h3>
-        <h4>Hover On</h4>
-        <ul>
-          <li>The image slightly scales larger</li>
-          <li>The image brightness increases</li>
-          <li>The Image fades from bottle to face over .5 seconds</li>
-        </ul>
+      <h3>Goals & Objectives</h3>
+      <ul>
+        <li>Make interactive elements easy to recognize through hover and motion.</li>
+        <li>Give clear visual feedback when a user hovers and selects the product sizes or favorites button.</li>
+        <li>Allow users to preview product details, such as different imagery and size options with hover, without leaving the product card.</li>
+        <li>Keep all interactions simple, lightweight, and consistent with Glossier’s branding.</li>
+      </ul>
 
-        <h4>Hover Off</h4>
-        <ul>
-          <li>The image slightly scales smaller</li>
-          <li>The image brightness deceases</li>
-          <li>The image fades from face to bottle over .5 seconds</li>
-        </ul>
+      <p>This project was an individual project.</p>
+    </section>
 
-        <h3>Add to Bag Button:</h3>
-        <h4>Hover On</h4>
-        <ul>
-          <li>The button slightly moves up</li>
-          <li>The button's color fades to light pink</li>
-          <li>The button's stroke turns to dashed</li>
-        </ul>
+    <!-- PROCESS -->
+    <section class="section">
+      <h2>Process and Insight</h2>
 
-        <h4>Hover Off</h4>
-        <ul>
-          <li>The button slightly moves down</li>
-          <li>The button's color fades to white</li>
-          <li>The button's stroke turns to solid</li>
-        </ul>
-        
-        <h3>Product Size Button:</h3>
-        <h4>Hover On</h4>
-        <ul>
-          <li>Two more buttons options appear on right</li>
-          <li>The button's opacity lowers and increases</li>
-        </ul>
+      <h3>Target Audience</h3>
+      <p>
+        The primary audience for this project was Glossier’s typical online shopper, the demographic
+        being usually women ages 16–30. They are users who value a clean interface, subtle design, and
+        a smooth browsing experience. These users are likely scanning quickly, comparing products, and
+        making decisions based on small details. Because of this, the interactions needed to be noticeable
+        enough to guide the user, but soft enough to avoid feeling distracting or overwhelming.
+      </p>
 
-        <h4>Hover Off</h4>
-        <ul>
-          <li>Two button options disappear on right</li>
-          <li>The button's opacity lowers and increases</li>
-        </ul>
-        
-        <h3>Favorites Button:</h3>
-        <h4>Hover On</h4>
-        <ul>
-          <li>Heart outline color changes from black to red</li>
-        </ul>
+      <h3>User Journey</h3>
+      <ul>
+        <li>User scrolls through the fragrance collection page.</li>
+        <li>User notices a product card and hovers over it.</li>
+        <li>The card lifts slightly, signaling it is interactive.</li>
+        <li>User hovers over the image and sees a lifestyle photo preview.</li>
+        <li>User moves to the size button and hovers to reveal more size options.</li>
+        <li>User selects a size and sees a brief confirmation animation.</li>
+        <li>User clicks the heart icon to favorite the product.</li>
+        <li>User feels confident their actions were successful due to visual feedback.</li>
+      </ul>
 
-        <h4>Hover Off</h4>
-        <ul>
-          <li>Heart outline color changes from red to black</li>
-        </ul>
-        
-        <h4>Click On (First to favorite)</h4>
-        <ul>
-          <li>The heart icon fills with red</li>
-        </ul>
+      <h3>Early Design Exploration</h3>
+      <p>
+        Instead of starting with formal sketches, early exploration was done by analyzing Glossier’s
+        existing website and other similarly branded e-commerce sites. These new design ideas were added
+        during the Beta Phase of the project and included new hover states to the product card and add
+        to bag button.
+      </p>
 
-        <h4>Click On (Second to unfavorite)</h4>
-        <ul>
-          <li>The red fill is removed, returning the heart to its outline state</li>
-        </ul>
-      </div>
+      <p><em>*Image of style guide and beta GIF*</em></p>
 
-      <!-- ========== COLUMN 3 ========== -->
-      <div>
-        <h2>Feedback</h2>
-        <h2>Rules</h2>
+      <h3>Alpha, Beta, and Final Iterations</h3>
 
-        <h3>Product Card Block:</h3>
-        <h4>Hover On</h4>
-        <ul>
-          <li>The box slightly scales up</li>
-          <li>Buttons and text inside box scale up</li>
-          <li>Shadow behind box appears</li>
-        </ul>
+      <h4>Alpha Phase</h4>
+      <p>
+        The alpha phase focused on planning and defining the interactions before writing any code.
+        An animated GIF was used to show the intended behavior of the product card, along with a written
+        breakdown of the triggers, rules, and feedback for each interaction. This helped map out how users
+        would interact with the card and what visual responses would occur.
+      </p>
+      <p>
+        The alpha build translated this concept into code. The initial product card layout was built using
+        HTML and CSS, and hover interactions were implemented based on the alpha planning.
+      </p>
 
-        <h4>Hover Off</h4>
-        <ul>
-          <li>The box slightly scales down</li>
-          <li>Buttons and text inside box scale down</li>
-          <li>Shadow behind box dissapears</li>
-        </ul>
+      <h4>Beta Phase</h4>
+      <p>
+        During the beta phase, existing interactions were reviewed and adjusted based on usability and
+        clarity. Changes were made to improve discoverability and feedback, such as updating the hover
+        state of the “Add to Bag” button and adding a hover interaction to the entire product card to
+        create a subtle lift effect.
+      </p>
+      <p>
+        These updates were first explored visually in Figma. A short prototype GIF demonstrated the
+        revised interactions, which made it easier to evaluate timing and motion before coding.
+        For the beta build, the changes were implemented in code to match the Figma example as closely
+        as possible.
+      </p>
 
-        <h3>Product Card Image:</h3>
-        <h4>Hover On</h4>
-        <ul>
-          <li>The image slightly scales larger</li>
-          <li>The image brightness increases</li>
-          <li>The Image fades from bottle to face over .5 seconds</li>
-        </ul>
+      <h4>Final Phase</h4>
+      <p>
+        The final phase focused on adding more advanced, state-based interactions. A favorites button
+        was introduced with both hover and click states to clearly communicate saved and unsaved states.
+        The product size buttons were also enhanced with hover and click interactions, allowing users to
+        reveal additional options and receive visual confirmation when a size was selected.
+      </p>
+      <p>
+        As with earlier phases, the final interactions were first planned visually and then coded into
+        the final build.
+      </p>
 
-        <h4>Hover Off</h4>
-        <ul>
-          <li>The image slightly scales smaller</li>
-          <li>The image brightness deceases</li>
-          <li>The image fades from face to bottle over .5 seconds</li>
-        </ul>
+      <h3>Development and Refinement</h3>
+      <p>
+        CSS was used to handle most hover interactions, transitions, and animations, while JavaScript
+        controlled state-based actions like the favorites toggle and size selection.
+      </p>
 
-        <h3>Add to Bag Button:</h3>
-        <h4>Hover On</h4>
-        <ul>
-          <li>The button slightly moves up</li>
-          <li>The button's color fades to light pink</li>
-          <li>The button's stroke turns to dashed</li>
-        </ul>
+      <h3>Final Build</h3>
+      <p>
+        The final product is a functional product card that demonstrates how microinteractions can
+        improve clarity and confidence during browsing. Each interaction supports usability while
+        maintaining a clean, minimal look.
+      </p>
+    </section>
 
-        <h4>Hover Off</h4>
-        <ul>
-          <li>The button slightly moves down</li>
-          <li>The button's color fades to white</li>
-          <li>The button's stroke turns to solid</li>
-        </ul>
-        
-        <h3>Product Size Button:</h3>
-        <h4>Hover On</h4>
-        <ul>
-          <li>Two more buttons options appear on right</li>
-          <li>The button's opacity lowers and increases</li>
-        </ul>
+    <!-- SOLUTION -->
+    <section class="section">
+      <h2>The Solution</h2>
+      <p>
+        The final solution is a fully interactive Glossier-inspired fragrance product card that uses
+        microinteractions to improve clarity, feedback, and exploration while keeping the design minimal.
+      </p>
+      <p>
+        The product card responds to hover by slightly lifting and adding a soft shadow, helping users
+        recognize it as an interactive element. The media area introduces a hover-based image transition,
+        allowing users to preview the product in context.
+      </p>
+      <p>
+        The size selection feature stays compact by default and expands on hover. Clicking a size updates
+        the primary button text and briefly confirms the selection before returning to its neutral state.
+        A favorites button supports saving products through clear hover and click states.
+      </p>
+    </section>
 
-        <h4>Hover Off</h4>
-        <ul>
-          <li>Two button options disappear on right</li>
-          <li>The button's opacity lowers and increases</li>
-        </ul>
-        
-        <h3>Favorites Button:</h3>
-        <h4>Hover On</h4>
-        <ul>
-          <li>Heart outline color changes from black to red</li>
-        </ul>
+    <!-- RESULTS -->
+    <section class="section">
+      <h2>The Results</h2>
+      <p>
+        This project successfully met its goal of using microinteractions to make a product card feel
+        more clear and responsive without adding unnecessary complexity. The final build communicates
+        interactive elements through subtle hover and click feedback.
+      </p>
+      <p>
+        The biggest takeaway from this project was learning how small design changes can have a strong
+        impact on usability. If continued, future improvements could focus on accessibility features
+        and expanding feedback for actions like adding an item to the cart.
+      </p>
+    </section>
 
-        <h4>Hover Off</h4>
-        <ul>
-          <li>Heart outline color changes from red to black</li>
-        </ul>
-        
-        <h4>Click On (First to favorite)</h4>
-        <ul>
-          <li>The heart icon fills with red</li>
-        </ul>
-
-        <h4>Click On (Second to unfavorite)</h4>
-        <ul>
-          <li>The red fill is removed, returning the heart to its outline state</li>
-        </ul>
-      </div>
-
-      <!-- ========== COLUMN 4  ========== -->
-      <div>
-        <h2>Loops & Modes</h2>
-        <ul>
-          <li>None</li>
-        </ul>
-      </div>
-    </div>
   </main>
 
-  <section class="gif-section">
-    <img class="gif" src="images/output-small.gif" alt="Glossier hover animation" />
-  </section>
-
-  <footer>
-    <p>Created by Suhaani Gupta - IDM241</p>
+  <footer class="footer">
+    <p>Created by Suhaani Gupta · IDM 241</p>
   </footer>
+
 </body>
 </html>
