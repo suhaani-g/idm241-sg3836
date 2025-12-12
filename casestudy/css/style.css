@@ -122,7 +122,7 @@ body {
   }
 
 
-  /* EARLY DESIGN IMAGES */
+/* EARLY DESIGN IMAGES */
 .early-design-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -136,6 +136,9 @@ body {
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
   }
   
   .early-design-images img {
@@ -144,19 +147,24 @@ body {
     display: block;
   }
   
-  /* Caption style */
+  /* FIXED CAPTION */
   .early-design-images figcaption {
-    padding: 12px 14px;
+    max-width: 85%;              
+    padding: 12px 0 16px;
     font-family: "IBM Plex Mono", monospace;
     font-size: 11px;
     letter-spacing: 0.04em;
     color: #555;
-    background: #fff;
+    text-align: left;
   }
   
   /* Responsive: stack on mobile */
   @media (max-width: 700px) {
     .early-design-images {
       grid-template-columns: 1fr;
+    }
+  
+    .early-design-images figcaption {
+      max-width: 90%;
     }
   }
